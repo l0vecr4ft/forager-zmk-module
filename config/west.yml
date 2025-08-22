@@ -11,9 +11,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: prospector-zmk-module
-      remote: carrefinho
-      revision: main
     - name: forager-zmk-module
       remote: carrefinho
       revision: main
