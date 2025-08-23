@@ -9,3 +9,4 @@ features:
 siblings:
   - forager_left
   - forager_right
+  - forager_dongle

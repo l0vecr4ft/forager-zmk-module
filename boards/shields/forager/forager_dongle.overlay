@@ -3,6 +3,7 @@
 / {
   chosen {
     zmk,kscan = &mock_kscan;
+    wakeup_source;
   };
 
   mock_kscan: mock_kscan_0 {
