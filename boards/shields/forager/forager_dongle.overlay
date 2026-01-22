@@ -1,0 +1,14 @@
+#include "forager.dtsi"
+
+// Remove kscan from chosen as the dongle doesn't have a physical keyboard matrix
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &default_layout;
+    };
+};
+
+// The dongle doesn't have a physical keyboard, it only receives data from the split halves
+&kscan0 {
+    status = "disabled";
+};

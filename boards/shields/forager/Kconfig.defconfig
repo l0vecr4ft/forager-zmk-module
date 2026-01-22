@@ -1,4 +1,26 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+# ============================================
+# FORAGER LEFT - Peripheral (quando usato con dongle)
+# ============================================
 if SHIELD_FORAGER_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Forager"
+
+# IMPORTANTE: Left è PERIPHERAL quando usi il dongle
+# Se vuoi usare left come CENTRAL (senza dongle), vedi build.yaml
+
+config ZMK_STUDIO
+    default y
+
+endif
+
+# ============================================
+# FORAGER DONGLE - Central
+# ============================================
+if SHIELD_FORAGER_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "Forager"
@@ -6,11 +28,11 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_STUDIO
-    default y
-
 endif
 
+# ============================================
+# SPLIT KEYBOARD - Configurazione generale
+# ============================================
 if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT
 
 config ZMK_SPLIT
