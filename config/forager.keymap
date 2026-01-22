@@ -22,6 +22,10 @@
 	ignore-modifiers;
 };
 
+&soft_off {
+    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
 
 / {
 	behaviors {
@@ -41,18 +45,6 @@
 			tapping-term-ms = <200>;
 			quick-tap-ms = <200>;
 			bindings = <&kp>, <&kp>;
-		};
-
-		// Hold-tap behavior for soft_off
-		// Hold for 500ms to trigger soft_off (power down)
-		// Tap does nothing (safe against accidental presses)
-		ht_soft_off: hold_tap_soft_off {
-			compatible = "zmk,behavior-hold-tap";
-			label = "HT_SOFT_OFF";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <500>;
-			bindings = <&soft_off>, <&none>;
 		};
 	};
 
@@ -133,10 +125,10 @@
 		syst_layer {
 			label = "SYST";
 			bindings = <
-			&none           &none  &none  &none  &ht_soft_off 0 0       &ht_soft_off 0 0  &none  &none  &none  &none
-			&none           &none  &none  &none  &none                  &none             &none  &none  &none  &none
-			&none           &none  &none  &none  &none                  &none             &none  &none  &none  &none
-			                              &none  &studio_unlock         &studio_unlock    &none
+			&none           &none  &none  &none  &soft_off       &soft_off  &none  &none  &none  &none
+			&none           &none  &none  &none  &none           &none             &none  &none  &none  &none
+			&none           &none  &none  &none  &none           &none             &none  &none  &none  &none
+			                              &none  &studio_unlock  &studio_unlock    &none
 			>;
 		};
 	};
