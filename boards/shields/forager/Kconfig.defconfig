@@ -18,6 +18,22 @@ config ZMK_STUDIO
 endif
 
 # ============================================
+# FORAGER RIGHT - Peripheral (quando usato con dongle)
+# ============================================
+if SHIELD_FORAGER_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Forager"
+
+# IMPORTANTE: Right è PERIPHERAL quando usi il dongle
+# Se vuoi usare right come CENTRAL (senza dongle), vedi build.yaml
+
+config ZMK_STUDIO
+    default y
+
+endif
+
+# ============================================
 # FORAGER DONGLE - Central
 # ============================================
 if SHIELD_FORAGER_DONGLE
